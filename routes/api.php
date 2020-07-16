@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::post('/upload/file', 'FileController@upload')->name('upload');
+
+
 Route::get('/check', function (Request $request) {
-    echo "Ali";
+
+    $users = DB::table('myguests')->get();
+
+    echo $users;
+
+
 });
 
 
